@@ -1,0 +1,4 @@
+<!-- Here we are using a component we created and passing the data to it using property binding 
+and a event binding to get the data back from the compoment to this parent component-->
+<app-flowers-list [flowersList] = "flowers"
+(flowerSelected1)="onFlowerClicked($event)"></app-flowers-list>

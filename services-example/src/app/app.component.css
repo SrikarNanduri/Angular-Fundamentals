@@ -1,0 +1,17 @@
+/* .container{
+    width: 100%;
+    display: flex;
+    flex-direction: column
+} */
+
+.products{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+}
+
+.checkout{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+}

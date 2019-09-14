@@ -1,0 +1,12 @@
+<div *ngFor = "let product of products">
+        <div class = "card">
+            <div class = "card-image">
+                <img src = {{product.productImage}} alt="Product Image">
+            </div>
+            <div class = "card-body">
+                <h5 class = "card-title">{{ product.productName }}</h5>
+                <p class = "card-text">Quantity: {{ product.productQuantity}} </p>
+                <p class = "card-text">Price Total: {{ product.productPrice | currency }}</p>
+            </div>
+        </div>
+    </div>

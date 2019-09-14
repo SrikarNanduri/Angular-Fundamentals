@@ -1,0 +1,6 @@
+
+<!-- Here we are using the card component we created and passing data to it. *ngFor is directive used to loop
+so we looped through the list data we got from the parent and sent the flower object to the child -->
+<app-flowers-card *ngFor = "let flower of flowersList" [flower] = "flower"
+(flowerSelected)= "clicked($event)"
+></app-flowers-card>
