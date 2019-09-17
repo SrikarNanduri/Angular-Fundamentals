@@ -19,13 +19,6 @@ export class ProductComponent implements OnInit {
         this.products = products;
       }
     );
-    /*  this.productService.productUpdateListener.subscribe(
-       product => {
-         this.products = product;
-         console.log(this.products[0].productName);
-       },
-        err => this.errorMessage = err
-     ); */
   }
 
   increment(product: IProduct) {
