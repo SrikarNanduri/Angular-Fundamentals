@@ -39,11 +39,10 @@ export class ProductComponent implements OnInit {
   decrement(product: IProduct) {
     if (product.productQuantity !== 0) {
       product.productQuantity -= 1;
-      if (product.productQuantity < 1) {
-
-      } else {
+      if (product.productQuantity < 1) {} else {
         product.productPrice -= 25;
       }
+      this.productService.onProductUpdate(product);
     }
   }
 
