@@ -22,8 +22,9 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         }
         if (product.productQuantity === 0) {
           console.log('product to remove ' + product.productDescription);
-          this.products = this.products.filter(productIndex => productIndex.productId !== productIndex.productId);
+          this.products = this.products.filter(productIndex => productIndex.productQuantity !== 0);
         }
+        console.log('fileterd list ' + this.products);
       },
       err => this.errorMessage = err
     );
