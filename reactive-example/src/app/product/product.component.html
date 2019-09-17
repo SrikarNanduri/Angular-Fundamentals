@@ -11,7 +11,7 @@
         <div class = "card-button-container">
         <button class = "card-button" (click) = "increment(product)" [disabled]="product.productQuantity == 10">+</button>
         <p class = "card-text-button">{{ product.productQuantity }}</p>
-        <button class = "card-button" (click) = "decrement(product)" [disabled]="product.productQuantity == 1">-</button>
+        <button class = "card-button" (click) = "decrement(product)" [disabled]="product.productQuantity == 0">-</button>
         </div>
     </div>
 </div>
