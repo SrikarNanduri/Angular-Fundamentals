@@ -8,12 +8,12 @@ import { of, Observable, Subject } from 'rxjs';
 export class ProductService {
 
   products: Product[];
-  protected productSource = new Subject<IProduct[]>();
+  protected productSource = new Subject<IProduct>();
   public productUpdateListener = this.productSource.asObservable();
 
-  onProductUpdate(data: IProduct[]) {
+  onProductUpdate(data: IProduct) {
     this.productSource.next(data);
-    console.log(this.productUpdateListener.subscribe(console.log));
+    console.log(data.productName);
   }
   constructor() {
     this.products = [
@@ -26,7 +26,7 @@ export class ProductService {
   ];
   }
 
-/*   getProducts(): Observable<IProduct[]> {
+  getProducts(): Observable<IProduct[]> {
     return of(this.products);
-  } */
+  }
 }

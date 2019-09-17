@@ -14,18 +14,24 @@ export class ProductComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.productService.productUpdateListener.subscribe(
+    this.productService.getProducts().subscribe(
+      products => {
+        this.products = products;
+      }
+    );
+   /*  this.productService.productUpdateListener.subscribe(
       product => {
         this.products = product;
         console.log(this.products[0].productName);
       },
        err => this.errorMessage = err
-    );
+    ); */
   }
 
   increment(product: IProduct) {
     product.productQuantity += 1;
     product.productPrice += 25 ;
+    this.productService.onProductUpdate(product);
 }
 
 decrement(product: IProduct) {

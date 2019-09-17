@@ -15,7 +15,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
     this.productService.productUpdateListener.subscribe(
        product => {
-        this.products = product;
+        this.products.push(product);
         console.log(this.products[0].productImage);
       },
      err => this.errorMessage = err
