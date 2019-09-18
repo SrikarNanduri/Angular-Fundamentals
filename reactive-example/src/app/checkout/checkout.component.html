@@ -6,7 +6,8 @@
         <div class = "card-body">
             <h5 class = "card-title">{{ product.productName }}</h5>
             <p class = "card-text">Quantity: {{ product.productQuantity}} </p>
-            <p class = "card-text">Price Total: {{ product.productPrice | currency }}</p>
+            <p class = "card-text" *ngIf = " product.productQuantity !== 0; else elseBlock ">Price Total: {{ product.productPrice | currency }}</p>
+            <ng-template #elseBlock> <p class = "card-text">Price Total:  {{0 | currency}} </p></ng-template>
         </div>
     </div>
 </div>

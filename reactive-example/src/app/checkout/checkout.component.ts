@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -6,20 +6,34 @@ import { ProductService } from '../product.service';
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent implements OnInit {
-  products: IProduct[];
+export class CheckoutComponent implements OnInit, OnDestroy {
+  products: IProduct[] = [];
   errorMessage = '';
+  unsubscribe;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.productService.productUpdateListener.subscribe(
-       product => {
-        this.products = product;
-        console.log(this.products[0].productImage);
+    this.unsubscribe = this.productService.productUpdateListener.subscribe(
+      product => {
+        if (!this.products.includes(product)) {
+          this.products.push(product);
+          console.log(this.products[0].productImage);
+        }
+        if (product.productQuantity === 0) {
+          console.log('product to remove ' + product.productDescription);
+          this.products = this.products.filter(productIndex => productIndex.productQuantity !== 0);
+        }
+        console.log('fileterd list ' + this.products);
       },
-     err => this.errorMessage = err
+      err => this.errorMessage = err
     );
+  }
+
+  ngOnDestroy() {
+    if (this.unsubscribe) {
+      this.unsubscribe();
+    }
   }
 
 }

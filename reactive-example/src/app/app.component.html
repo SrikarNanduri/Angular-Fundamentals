@@ -1,10 +1,17 @@
 <div>
   <h2>Reactive Example</h2>
   <div>
-    <nav>
+   <!--  <nav>
       <a routerLink="/product">Products </a>
-      <a routerLink="/checkout"> Checkout </a>
+      <a style="margin-left: 20px;" routerLink="/checkout"> Checkout </a>
     </nav>
-    <router-outlet></router-outlet>
+    <router-outlet></router-outlet> -->
+
+    <div class ="container">
+      <h2>Products</h2>
+      <app-product class = "products"></app-product>
+      <h2>Checkout</h2>
+      <app-checkout class = "checkout"></app-checkout>
+  </div>
   </div>
 </div>
