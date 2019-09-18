@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Positioning Is Easy!</title>
+    <link href='styles.css' rel='stylesheet'/>
+  </head>
+  <body>
+    <!-- “Relative positioning” moves elements around relative to where they would normally appear in the static flow of the page. This is useful for nudging boxes around when the default flow is just a little bit off. -->
+    <div class='container'>
+      <div class='example relative'>
+        <div class='item'><img src='images/static.svg' /></div>
+        <div class='item item-relative'><img src='images/relative.svg' /></div>
+        <div class='item'><img src='images/static.svg' /></div>
+      </div>
+    </div>
+    <!-- “Absolute positioning” is just like relative positioning, but the offset is relative to the entire browser window instead of the original position of the element. Since there’s no longer any relationship with the static flow of the page, consider this the most manual way to lay out an element. -->
+    <div class='container'>
+      <div class='example absolute'>
+        <div class='item'><img src='images/static.svg' /></div>
+        <div class='item item-absolute'><img src='images/absolute.svg' /></div>
+        <div class='item'><img src='images/static.svg' /></div>
+      </div>
+    </div>
+<!-- “Fixed positioning” has a lot in common with absolute positioning: it’s very manual, the element is removed from the normal flow of the page, and the coordinate system is relative to the entire browser window. The key difference is that fixed elements don’t scroll with the rest of the page. -->
+    <div class='container'>
+      <div class='example fixed'>
+        <div class='item'><img src='images/static.svg' /></div>
+        <div class='item item-fixed'><img src='images/fixed.svg' /></div>
+        <div class='item'><img src='images/static.svg' /></div>
+      </div>
+    </div>
+
+  </body>
+</html>

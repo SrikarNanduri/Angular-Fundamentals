@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 1200px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .example {
+    display: flex;
+    justify-content: space-around;
+    
+    width: 800px;
+    margin: 50px 0;
+    background-color: #D6E9FE;
+  }
+  
+  .item img {
+    display: block;
+  }
+
+  /* The position: relative; line makes it a positioned element, and the top and left properties let you define how far it’s offset from its static position. This is sort of like setting an (x, y) coordinate for the element. */
+  .item-relative {
+    position: relative;
+    bottom: 30px;
+    right: 30px;
+  }
+
+/* Our HTML structure is the exact same as the previous example, but this will stick the purple image in the top-left corner of the browser window. You can also try setting a bottom or right value to get a clearer idea of what’s going on. The other interesting effect of absolute is that it completely removes an element from the normal flow of the page. This is easier to see with left-aligned elements, so let’s temporarily change the justify-content property in our .example rule:
+
+.example {
+  display: flex;
+  justify-content: flex-start;
+
+}
+In our relative positioning example (the first row), there’s still a space where the positioned element used to be, but with absolute positioning, that space has vanished. It’s as if .item-absolute doesn’t even exist to its parent and surrounding elements. Be sure to change the justify-content back to space-around before moving on. */
+  .item-absolute {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .absolute {
+    position: relative;
+  }
+
+/* This will place the red image in the bottom-right corner of the screen. Try scrolling the page, and you’ll discover that it doesn’t move with the rest of the elements on the page, while the absolutely positioned purple image does. */
+  .item-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
