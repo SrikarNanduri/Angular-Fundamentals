@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PopularMoviesService } from 'src/app/services/popular-movies-service/popular-movies.service';
+import { MovieResponse } from 'src/app/models/movie-response';
 
 @Component({
   selector: 'app-sb-popular-movies',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularMoviesComponent implements OnInit {
 
-  constructor() { }
+  response: MovieResponse;
+  errorMessage = '';
+
+  constructor(private data: PopularMoviesService) { }
 
   ngOnInit() {
+
+    this.data.get_movieResults().subscribe(
+      response => {
+        this.response = response;
+        console.log(this.response.results);
+      },
+      err => this.errorMessage = err
+    );
   }
 
 }

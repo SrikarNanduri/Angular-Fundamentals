@@ -7,7 +7,8 @@ import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 const routes: Routes = [
   {path: 'popular-movies', component: PopularMoviesComponent},
   {path: 'bookmarks', component: BookmarksComponent},
-  {path: '', redirectTo: '/popular-movies', pathMatch: 'full'}
+  {path: '', redirectTo: 'popular-movies', pathMatch: 'full'},
+  { path: '**', redirectTo: 'popular-movies', pathMatch: 'full' }
 ];
 
 @NgModule({
