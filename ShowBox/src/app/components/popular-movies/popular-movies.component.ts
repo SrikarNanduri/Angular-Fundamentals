@@ -11,6 +11,7 @@ export class PopularMoviesComponent implements OnInit {
 
   response: MovieResponse;
   errorMessage = '';
+  loader = true;
 
   constructor(private data: PopularMoviesService) { }
 
@@ -20,6 +21,7 @@ export class PopularMoviesComponent implements OnInit {
       response => {
         this.response = response;
         console.log(this.response.results);
+        this.loader = false;
       },
       err => this.errorMessage = err
     );

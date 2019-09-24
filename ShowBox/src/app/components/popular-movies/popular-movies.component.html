@@ -1,16 +1,32 @@
-<!-- <div>
-    <div *ngFor = 'let movie of response.results'>
-        <mat-card class = "card">
-            <img mat-card-image [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-                <mat-card-title>{{movie.title}}</mat-card-title>
-                <mat-card-subtitle>{{movie.release_date}}</mat-card-subtitle>
-            </mat-card-content>
-        </mat-card>
+<div *ngIf='!loader'>
+    <div class="container">
+        <div *ngFor='let movie of response.results'>
+            <mat-card class="card">
+                <img mat-card-image [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-title-group>
+                    <mat-card-title class = "title">{{movie.title}}</mat-card-title>
+                    <mat-card-subtitle class="subtitle">{{movie.release_date}}</mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card>
+        </div>
     </div>
+</div>
+
+<!-- <div *ngIf = '!loader'>
+<div class="container ui-g-12">
+    <div *ngFor='let movie of response.results' class = "ui-g-2" >
+        <p-card  styleClass="card" header={{movie.title}} subheader={{movie.release_date}}>
+            <p-header>
+            <img mat-card-image [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path" alt="Photo of a Shiba Inu">
+            </p-header>
+        </p-card>
+    </div>
+</div>
 </div> -->
 
-<div>
+
+<!-- <div>
     <mat-grid-list cols="5" rowHeight = "180px">
         <mat-grid-tile *ngFor='let movie of response.results'>
             <mat-card class="card">
@@ -22,6 +38,6 @@
             </mat-card>
         </mat-grid-tile>
     </mat-grid-list>
-</div>
+</div> -->
 
 <!-- "https://material.angular.io/assets/img/examples/shiba2.jpg" -->
