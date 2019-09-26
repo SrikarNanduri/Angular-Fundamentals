@@ -21,6 +21,8 @@ export class PopularMoviesService {
                 .set('api_key', 'set your API key') // Check before you push
                 .set('sort_by', 'popularity.desc')
                 .set('page', '1');
-    return this.httpClient.get<MovieResponse>(this.baseURL + this.discoverMovieURL, {params});
+    return this.httpClient.get<MovieResponse>(this.baseURL + this.discoverMovieURL, {params}).pipe(
+      tap( result => console.log(result))
+    );
   }
 }

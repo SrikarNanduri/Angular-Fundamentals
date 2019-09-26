@@ -20,7 +20,6 @@ export class PopularMoviesComponent implements OnInit {
     this.data.get_movieResults().subscribe(
       response => {
         this.response = response;
-        console.log(this.response.results);
         this.loader = false;
       },
       err => this.errorMessage = err
