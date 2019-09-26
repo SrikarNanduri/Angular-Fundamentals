@@ -2,8 +2,7 @@
     <div class="container">
         <div *ngFor='let movie of response.results'>
             <div class="card">
-                <img class= "image"  [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path"
-                    alt="poster" width="200px" height="250px">
+                <img class= "image"  [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path">
                     <div class = "title">
                         <div class = "text">{{movie.title}}</div>
                     </div>
