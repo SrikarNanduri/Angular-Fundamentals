@@ -1,13 +1,19 @@
-<section>
+<section class = "container">
     <div *ngIf="!loading">
         <div class="backdrop">
             <img [src]="'https://image.tmdb.org/t/p/original/' + movieDetails.backdrop_path">
         </div>
-        <div class = "row container">
+        <div class = "row card-container">
             <div class = "card col">
                 <img [src] = "'https://image.tmdb.org/t/p/w342/'+movieDetails.poster_path">
             </div>
-            <h2 class= "title col">{{movieDetails.original_title}}</h2>
+            <div class = "col">
+            <h2 class= "title">{{movieDetails.original_title}}</h2>
+            <p class = "subtitle">{{movieDetails.release_date}}</p>
+            <p class ="subtitle">{{movieDetails.tagline | uppercase }}</p>
+            <p class=overview>{{movieDetails.overview}}</p>
         </div>
+        </div>
+        
     </div>
 </section>
