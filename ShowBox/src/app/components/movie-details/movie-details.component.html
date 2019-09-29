@@ -1,2 +1,13 @@
-<p>movie-details works!</p>
-<h2 *ngIf = "!loading">{{movieDetails.original_title}}</h2>
+<section>
+    <div *ngIf="!loading">
+        <div class="backdrop">
+            <img [src]="'https://image.tmdb.org/t/p/original/' + movieDetails.backdrop_path">
+        </div>
+        <div class = "row container">
+            <div class = "card col">
+                <img [src] = "'https://image.tmdb.org/t/p/w342/'+movieDetails.poster_path">
+            </div>
+            <h2 class= "title col">{{movieDetails.original_title}}</h2>
+        </div>
+    </div>
+</section>
