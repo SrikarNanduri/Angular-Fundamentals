@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PopularMoviesService } from 'src/app/services/popular-movies-service/popular-movies.service';
 import { MovieResponse } from 'src/app/models/movie-response';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sb-popular-movies',
@@ -13,7 +14,7 @@ export class PopularMoviesComponent implements OnInit {
   errorMessage = '';
   loader = true;
 
-  constructor(private data: PopularMoviesService) { }
+  constructor(private data: PopularMoviesService,  public router: Router) { }
 
   ngOnInit() {
 
@@ -24,6 +25,10 @@ export class PopularMoviesComponent implements OnInit {
       },
       err => this.errorMessage = err
     );
+  }
+
+  passId(id: string) {
+    this.router.navigateByUrl('/movie-details', {state: {movieId: id}});
   }
 
 }

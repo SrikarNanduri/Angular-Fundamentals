@@ -10,13 +10,15 @@ import { MaterialModule } from './material.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { PopularMoviesComponent } from './components/popular-movies/popular-movies.component';
 import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     PopularMoviesComponent,
-    BookmarksComponent
+    BookmarksComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
