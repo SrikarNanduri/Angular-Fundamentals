@@ -17,7 +17,6 @@ export class PopularMoviesComponent implements OnInit {
   constructor(private data: PopularMoviesService,  public router: Router) { }
 
   ngOnInit() {
-    this.loading = true;
     this.data.get_movieResults().subscribe(
       response => {
         this.response = response;

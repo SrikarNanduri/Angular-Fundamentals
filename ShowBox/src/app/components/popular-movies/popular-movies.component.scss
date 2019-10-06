@@ -1,8 +1,18 @@
+    .container {
+    display: flex;
+    margin-top: 55px;
+    flex-flow: row wrap;
+    flex: auto;
+    max-width: fit-content;
+    background-color: #14181C;
+    }
+
     .card {
         max-width: 220px;
         margin: 10px;
         position: relative;
         border-radius: 5px;
+        background-color: #14181C;
         cursor: pointer;
     }
 
@@ -23,7 +33,7 @@
 
     .text {
         
-        color: black;
+        color: white;
         font-size: 18px;
         font-weight: bold;
         padding: 16px 32px;
@@ -54,10 +64,4 @@
     }
 
 
-    .container {
-        display: flex;
-        flex-flow: row wrap;
-        flex: auto;
-        max-width: fit-content;
-       
-    }
+

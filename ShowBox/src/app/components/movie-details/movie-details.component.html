@@ -9,7 +9,11 @@
             </div>
             <div class = "col">
             <h2 class= "title">{{movieDetails.original_title}}</h2>
-            <p class = "subtitle">{{movieDetails.release_date}}</p>
+            <span class = "row"> 
+                <p class = "col-sm-2 subtitle">{{movieDetails.release_date}}</p>
+                <p class = "col-sm-10 subtitle">{{movieDetails.runtime}} mins</p>
+            </span>
+           
             <p class ="subtitle">{{movieDetails.tagline | uppercase }}</p>
             <p class=overview>{{movieDetails.overview}}</p>
         </div>

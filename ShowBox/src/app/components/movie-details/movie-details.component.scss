@@ -1,22 +1,24 @@
     .backdrop {
        width: 100%;
-       max-height: 400px; 
+       max-height: 450px; 
        z-index: 1;
        background-color: #14181C;
+       margin-top: 55px;
     }
 
     .backdrop img {
         object-fit: fill;
         height: -webkit-fill-available;
         width: 100%;
-        padding: 0% 8% 0% 8%;
+        padding: 0% 17% 0% 17%;
     }
+
     .card-container {
         padding: 0px 15px 0px 15px;
-        margin: 0% 10% 0% 10%;
+        margin: 0% 16% 0% 16%;
         position: relative;
         z-index: 2;
-        top: -50px;
+        top: -45px;
     }
 
     .container {
@@ -50,6 +52,7 @@
     
     .subtitle {
         color: #99AABB;
+        padding-right: 5px;
     }
 
     .overview {
