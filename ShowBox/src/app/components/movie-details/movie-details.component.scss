@@ -64,3 +64,12 @@
         color: #99AABB;
         font-family: 'Times New Roman', Times, serif;
     }
+
+    .genre-container {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .margin-5{
+        margin: 5px;
+    }

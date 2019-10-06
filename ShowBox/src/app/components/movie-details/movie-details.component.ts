@@ -10,28 +10,30 @@ import { map } from 'rxjs/operators';
 })
 export class MovieDetailsComponent implements OnInit {
 
-movieId: string;
-movieDetails: MovieDetailsModel.MovieDetails;
-errorMessage = '';
-loading = true;
+  movieId: string;
+  movieDetails: MovieDetailsModel.MovieDetails;
+  errorMessage = '';
+  loading = true;
+
+  genres: MovieDetailsModel.Genre[];
 
   constructor(private movieDetailsService: MovieDetailsService, public activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-   this.activatedRoute.paramMap.pipe(
-     map(() => window.history.state)
-   ).subscribe(result => {
-    console.log(result.movieId);
-    this.movieId = result.movieId;
-   });
+    this.activatedRoute.paramMap.pipe(
+      map(() => window.history.state)
+    ).subscribe(result => {
+      console.log(result.movieId);
+      this.movieId = result.movieId;
+    });
 
-   this.movieDetailsService.getMovieDetails(this.movieId).subscribe(
-        result => {
-           this.movieDetails = result;
-           this.loading = false;
-        },
-        err => this.errorMessage = err
-      );
+    this.movieDetailsService.getMovieDetails(this.movieId).subscribe(
+      result => {
+        this.movieDetails = result;
+        this.loading = false;
+        this.genres = this.movieDetails.genres;
+      },
+      err => this.errorMessage = err
+    );
   }
-
 }
