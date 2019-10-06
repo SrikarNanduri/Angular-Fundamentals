@@ -15,9 +15,21 @@
                 </span>
                 <p class="subtitle">{{movieDetails.tagline | uppercase }}</p>
                 <p class=overview>{{movieDetails.overview}}</p>
-                <div class = "genre-container">
+                <div class="genre-container">
                     <div *ngFor='let genre of genres'>
                         <span class="badge badge-pill badge-dark margin-5">{{genre.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class = "title margin-left-right-16percent">Similar Movies</h4>
+        <div class="similar-container">
+            <br>
+            <div *ngFor='let movie of similar'>
+                <div routerLink='/movie-details' (click)="passId(movie.id)" class="similar-card">
+                    <img class="similar-image" [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path">
+                    <div class="similar-title">
+                        <div class="similar-text">{{movie.title}}</div>
                     </div>
                 </div>
             </div>

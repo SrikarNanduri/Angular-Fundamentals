@@ -73,3 +73,68 @@
     .margin-5{
         margin: 5px;
     }
+
+    .margin-left-right-16percent {
+        margin: 0% 17% 0% 17%;
+    }
+
+    .similar-container{
+        display: flex;
+        flex-flow: row wrap;
+        background-color: #14181C;
+        margin: 0% 18% 0% 18%;
+
+        img{
+            border-radius: inherit;
+            width: 170px;
+            height: 190px;
+        }
+    }
+
+    .similar-card {
+        max-width: 170px;
+        max-height: 190px;
+        margin: 10px;
+        position: relative;
+        border-radius: 5px;
+        background-color: #14181C;
+        cursor: pointer;
+    }
+
+    .similar-image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .similar-text {
+        
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 16px 32px;
+    }
+
+    
+    .similar-title {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        align-content: center;
+        font-size: 15px;
+    }
+
+    .similar-card:hover .similar-image{
+        opacity: 0.3;
+    }
+    .similar-card:hover .similar-title {
+        opacity: 1;
+    }

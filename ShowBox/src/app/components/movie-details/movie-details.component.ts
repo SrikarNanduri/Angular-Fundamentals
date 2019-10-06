@@ -16,9 +16,9 @@ export class MovieDetailsComponent implements OnInit {
   loading = true;
 
   genres: MovieDetailsModel.Genre[];
+  similar: MovieDetailsModel.SimilarResults[];
 
   constructor(private movieDetailsService: MovieDetailsService, public activatedRoute: ActivatedRoute) { }
-
   ngOnInit() {
     this.activatedRoute.paramMap.pipe(
       map(() => window.history.state)
@@ -32,6 +32,7 @@ export class MovieDetailsComponent implements OnInit {
         this.movieDetails = result;
         this.loading = false;
         this.genres = this.movieDetails.genres;
+        this.similar = this.movieDetails.similar.results.slice(0, 5);
       },
       err => this.errorMessage = err
     );
