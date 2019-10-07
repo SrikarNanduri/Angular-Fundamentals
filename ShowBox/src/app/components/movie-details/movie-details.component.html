@@ -23,8 +23,7 @@
             </div>
         </div>
         <h4 class = "title margin-left-right-16percent">Similar Movies</h4>
-        <div class="similar-container">
-            <br>
+        <div *ngIf = "!loading" class="similar-container">
             <div *ngFor='let movie of similar'>
                 <div routerLink='/movie-details' (click)="passId(movie.id)" class="similar-card">
                     <img class="similar-image" [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path">

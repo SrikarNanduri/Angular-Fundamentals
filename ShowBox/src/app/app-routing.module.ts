@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { PopularMoviesComponent } from './components/popular-movies/popular-movies.component';
 import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+//import { DetailsResolverService } from './guards/detailsResolverService.service';
 
 
 const routes: Routes = [
   {path: 'popular-movies', component: PopularMoviesComponent},
   {path: 'bookmarks', component: BookmarksComponent},
-  {path: 'movie-details', component: MovieDetailsComponent},
+  {path: 'movie-details', component: MovieDetailsComponent/* ,  resolve: {details: DetailsResolverService} */},
   {path: '', redirectTo: 'popular-movies', pathMatch: 'full'},
   { path: '**', redirectTo: 'popular-movies', pathMatch: 'full' }
 ];
