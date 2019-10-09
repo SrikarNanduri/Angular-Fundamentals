@@ -11,6 +11,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { PopularMoviesComponent } from './components/popular-movies/popular-movies.component';
 import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     LayoutComponent,
     PopularMoviesComponent,
     BookmarksComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
