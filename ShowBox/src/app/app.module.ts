@@ -6,7 +6,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MaterialModule } from './material.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { PopularMoviesComponent } from './components/popular-movies/popular-movies.component';
 import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
@@ -26,7 +25,6 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     HttpClientModule,
   ],
   providers: [],
