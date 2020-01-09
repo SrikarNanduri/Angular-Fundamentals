@@ -8,19 +8,18 @@ import { tap } from 'rxjs/operators';
 })
 export class SearchResultsServiceService {
 
-  query: string;
-
   baseURL = 'https://api.themoviedb.org/3/';
   searchMovieURL = 'search/movie';
+  ApiKey = 'Insert Your API Key';
 
   constructor(private httpClient: HttpClient) { }
 
-  //https://api.themoviedb.org/3/search/movie?api_key=APIKEY&query=spiderman&page=1
+  // https://api.themoviedb.org/3/search/movie?api_key=APIKEY&query=spiderman&page=1
 
-  get_searchResults(): Observable<MovieSearchModel.SearchDetails> {
+  get_searchResults(query: string): Observable<MovieSearchModel.SearchDetails> {
     const params = new HttpParams()
-              .set('api_key', 'Set your API Key') // Check before you push
-              .set('query', this.query)
+              .set('api_key', this.ApiKey) // Check before you push
+              .set('query', query)
               .set('page', '1');
 
     return this.httpClient.get<MovieSearchModel.SearchDetails>(this.baseURL + this.searchMovieURL, {params}).pipe(

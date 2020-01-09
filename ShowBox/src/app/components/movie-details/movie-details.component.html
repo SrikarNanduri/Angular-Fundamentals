@@ -1,8 +1,10 @@
 <section class="container">
     <div *ngIf="!loading">
+        <!-- Backdrop -->
         <div class="backdrop">
             <img [src]="'https://image.tmdb.org/t/p/original/' + movieDetails.backdrop_path">
         </div>
+        <!-- Details -->
         <div class="row card-container">
             <div class="card col">
                 <img [src]="'https://image.tmdb.org/t/p/w342/'+movieDetails.poster_path">
@@ -22,16 +24,20 @@
                 </div>
             </div>
         </div>
-        <h4 class = "title margin-left-right-16percent">Similar Movies</h4>
-        <div *ngIf = "!loading" class="similar-container">
-            <div *ngFor='let movie of similar'>
-                <div routerLink='/movie-details' (click)="passId(movie.id)" class="similar-card">
-                    <img class="similar-image" [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path">
-                    <div class="similar-title">
-                        <div class="similar-text">{{movie.title}}</div>
+        <!--SImilar Movies-->
+        <h4 class="title margin-left-right-16percent">Similar Movies</h4>
+        <section *ngIf="similar.length > 0 else elseBlock">
+            <div *ngIf="!loading" class="similar-container">
+                <div *ngFor='let movie of similar'>
+                    <div routerLink='/movie-details' (click)="passId(movie.id)" class="similar-card">
+                        <img class="similar-image" [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path">
+                        <div class="similar-title">
+                            <div class="similar-text">{{movie.title}}</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <ng-template #elseBlock><div class="title PlaceholderText">No Similar Movies Available</div></ng-template>
     </div>
 </section>

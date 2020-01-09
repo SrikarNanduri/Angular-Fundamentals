@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PopularMoviesService } from 'src/app/services/popular-movies-service/popular-movies.service';
 import { MovieResponse } from 'src/app/models/movie-response';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sb-popular-movies',

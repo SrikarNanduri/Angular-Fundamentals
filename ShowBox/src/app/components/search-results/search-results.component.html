@@ -1,1 +1,12 @@
-<h2>{{search.title}}</h2>
+<div *ngIf='!loading'>
+    <div class="container">
+        <div *ngFor='let movie of response.results'>
+            <div routerLink = '/movie-details' (click)= "passId(movie.id)" class="card">
+             <img class= "image" [src]="'https://image.tmdb.org/t/p/w342/'+movie.poster_path">
+                    <div class = "title">
+                        <div class = "text">{{movie.title}}</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
