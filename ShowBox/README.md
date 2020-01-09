@@ -3,7 +3,7 @@
 This is a project I've developed for learning, not sure if I'll update it in future. It's just a basic application which used TMDB API to show popular movies and has search feature to search for movies.
 
 
-<img src="Screens/showbox.PNG"> showbox
+<img src="Screens/showbox.PNG">
 
 
 
