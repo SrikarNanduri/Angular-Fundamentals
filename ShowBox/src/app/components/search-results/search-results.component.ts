@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchResultsServiceService } from 'src/app/services/search-results-service/search-results-service.service';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { map, tap, filter, pairwise } from 'rxjs/operators';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-sb-search-results',
@@ -16,7 +14,7 @@ export class SearchResultsComponent implements OnInit {
   errorMessage = '';
   loading = true;
   navigationSubscription;
-  constructor(private data: SearchResultsServiceService, public router: Router, public activatedRoute: ActivatedRoute, private _location: Location) {
+  constructor(private data: SearchResultsServiceService, public router: Router, public activatedRoute: ActivatedRoute) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       // If it is a NavigationEnd event re-initalise the component
       if (e instanceof NavigationEnd) {
