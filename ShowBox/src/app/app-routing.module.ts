@@ -11,13 +11,13 @@ const routes: Routes = [
   {path: 'popular-movies', component: PopularMoviesComponent},
   {path: 'bookmarks', component: BookmarksComponent},
   {path: 'movie-details', component: MovieDetailsComponent,  resolve: {details: DetailsResolverService}},
-  {path: 'search', component: SearchResultsComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
+  {path: 'search', component: SearchResultsComponent},
   {path: '', redirectTo: 'popular-movies', pathMatch: 'full'},
   { path: '**', redirectTo: 'popular-movies', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
