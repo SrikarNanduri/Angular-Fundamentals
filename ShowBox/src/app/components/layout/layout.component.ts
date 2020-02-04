@@ -7,14 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  query: string;
 
   constructor(public router: Router) { }
 
   ngOnInit() {
   }
 
-   onSubmit(query: string){
-     console.log(query);
-     this.router.navigateByUrl('/search', {state: {searchQuery: query}});
+   onSubmit(){
+     console.log(this.query);
+     this.router.navigate(['/search'], {queryParams: {searchQuery: this.query}});
+     this.query = null;
    }
 }
