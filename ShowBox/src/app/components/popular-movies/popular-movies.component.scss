@@ -8,7 +8,7 @@
     }
 
     .card {
-        max-width: 220px;
+        max-width: 225px;
         margin: 10px;
         position: relative;
         border-radius: 5px;
@@ -64,4 +64,33 @@
     }
 
 
+    .minWH {
+       max-height: 500px; 
+     
+       overflow: hidden; 
+    }
 
+    .carousel-styles {
+        margin: auto;
+        padding: 0px 15px;
+    }
+
+    .movie-list-style {
+        margin: auto;
+    }
+
+    .carousel-image {
+        background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        )
+    }
+
+    .carousel-image-2 {
+        position:relative;      // position and z-index is making the image so blank fix this.
+        z-index:-1;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
