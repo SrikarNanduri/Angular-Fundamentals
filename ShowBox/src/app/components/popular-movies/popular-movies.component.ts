@@ -23,7 +23,6 @@ export class PopularMoviesComponent implements OnInit {
       response => {
         this.response = response;
         this.loader = false;
-        this.getBackdrops();
       },
       err => this.errorMessage = err
     );
