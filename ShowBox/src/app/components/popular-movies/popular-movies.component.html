@@ -1,6 +1,6 @@
 <div *ngIf='!loader'>
     <div class="container">
-
+        <!-- Carousel-->
         <div id="carouselExampleIndicators" class="row carousel slide carousel-styles" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li *ngFor='let backdrop of getBackdrops()' data-target="#carouselExampleIndicators"
@@ -9,10 +9,10 @@
             <div class="carousel-inner">
                 <div class="carousel-item" *ngFor='let backdrop of getBackdrops()'
                     [ngClass]="{'active': backdrop.indicator === 0}">
-                    <div class= "carousel-image">
+                    <div class="carousel-image">
                         <img [src]="backdrop.backdrop" class="d-block w-100 carousel-image-2 minWH" alt="...">
                     </div>
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-none d-md-block scrim">
                         <h5>{{backdrop.title}}</h5>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
+        <!-- Movie List-->
         <div class="row movie-list-style">
             <div *ngFor='let movie of response.results'>
                 <div routerLink='/movie-details' (click)="passId(movie.id)" class="card">
@@ -39,3 +39,11 @@
         </div>
     </div>
 </div>
+<!-- Invalid message-->
+<section *ngIf="loader" style="margin-top: 10%;">
+    <div style="text-align: center;">
+        <span style="font-size: 30px; color:white">
+                {{errorMessage}}
+        </span>
+    </div>
+</section>

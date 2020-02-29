@@ -24,7 +24,7 @@ export class PopularMoviesComponent implements OnInit {
         this.response = response;
         this.loader = false;
       },
-      err => this.errorMessage = err
+      err => this.errorMessage = err.error.status_message
     );
   }
 
